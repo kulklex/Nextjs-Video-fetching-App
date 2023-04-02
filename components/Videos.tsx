@@ -8,16 +8,14 @@ type Props = {
 }
 
 export default function Videos({videos}: Props) {
-  console.log(videos)
-
-
+  
 
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2} className='text-white'>
       {videos && videos.map((video, index) => (
         <Box key={index} >
           {video.id.videoId && <VideoCard video={video} />}
-          {video.id.videoId && <ChannelCard channelDetails={video} />}
+          {video.id.channelId && <ChannelCard channelDetails={video} />}
         </Box>
       ))}
     </Stack>
