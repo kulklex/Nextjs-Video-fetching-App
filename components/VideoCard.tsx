@@ -17,7 +17,7 @@ export default function VideoCard({video: {id: {videoId}, snippet}}: Props) {
     <Card className="max-w-[358px] md:max-w-[270px] lg:max-w-[310px] shadow-[0] rounded-[0]">
         <Link href={videoId ? `/video/${videoId}` : demoVideoUrl} >
             <CardMedia 
-                image={snippet?.thumbnails?.high?.url || demoThumbnailUrl} alt={snippet?.title} className="w-[358px] h-[180px]" 
+                image={snippet?.thumbnails?.high?.url || demoThumbnailUrl} className="w-[358px] h-[180px]" 
             />
         </Link>
 
