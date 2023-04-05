@@ -45,7 +45,7 @@ export default function VideoDetail({id}: Props) {
 
             <Stack className="flex md:flex-row justify-center  items-center gap-[10px] lg:gap-[20px] text-[#fff] py-1 px-2">
               <Link href={`/channel/${videoDetails?.snippet?.channelId}`}>
-                <Typography variant={{ sm: "subtitle1", md: 'h6' }}  color="#fff">
+                <Typography className="text-lg md:text-xl"  color="#fff">
                   {videoDetails?.snippet?.channelTitle}
                   <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
                 </Typography>
@@ -64,7 +64,7 @@ export default function VideoDetail({id}: Props) {
         </Box>
           
         <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
-            <Typography variant="subTitle" color="#fff" className="flex justify-center items-center text-center pb-2 font-sans text-extrabold">
+            <Typography  color="#fff" className="flex justify-center items-center text-center pb-2 font-sans text-extrabold text-lg md:text-xl">
               Related Videos
             </Typography>
             <Videos videos={relatedVideos} direction="column" />
