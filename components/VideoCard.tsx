@@ -17,12 +17,12 @@ export default function VideoCard({video: {id: {videoId}, snippet}}: Props) {
   return (
     <Card className="max-w-[358px] md:max-w-[270px] lg:max-w-[310px] shadow-[0] rounded-[0]">
         <Link href={`/video/${videoId}`} >
-            <Image alt="video-image" width={358} height={180} 
+            <Image alt="video-image" width={358} height={180}
                 src={snippet?.thumbnails?.high?.url || demoThumbnailUrl} className="w-[358px] h-[180px]" 
             />
         </Link>
 
-        <CardContent className="bg-[#1e1e1e] h-[160px] md:h-[180px] max-h-[180px]" >
+        <CardContent className="bg-[#1e1e1e] h-[160px] md:h-[200px] max-h-[200px]" >
             <Link href={`/video/${videoId}`} >
                 <Typography variant='subtitle1' fontWeight="bold" color="#FFF">
                     {snippet?.title.slice(0, 60)}
