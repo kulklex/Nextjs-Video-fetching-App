@@ -3,6 +3,7 @@ import { Box } from "@mui/material"
 import Videos   from "../../components/Videos"
 import ChannelCard from "../../components/ChannelCard"
 import { fetchData } from "../../utils/fetchData"
+import Navbar from '../../components/Navbar'
 
 type Props = {
   id: string
@@ -27,7 +28,8 @@ export default function ChannelDetail({id}: Props) {
 
 
 
-  return (
+  return (<>
+    <Navbar/>
     <Box minHeight="95vh">
       <Box className="bg-black">
         <div style={{ background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)', zIndex: 10,}} className="h-[200px] md:h-[250px] lg:h-[300px]" />
@@ -38,7 +40,7 @@ export default function ChannelDetail({id}: Props) {
         <Videos videos={videos} />
       </Box>
     </Box>
-  )
+  </>)
 }
 
 

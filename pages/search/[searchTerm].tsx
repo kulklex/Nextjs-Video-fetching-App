@@ -3,6 +3,7 @@ import { Typography, Box } from '@mui/material'
 import Videos from '../../components/Videos'
 import {fetchData} from '../../utils/fetchData'
 import {useRouter} from 'next/router'
+import Navbar from '../../components/Navbar'
 
 type Props = {
   searchTerm: string
@@ -21,7 +22,8 @@ export default function SearchFeed({searchTerm}: Props) {
     .catch((err) => console.error(err))
   }, [searchTerm])
   
-  return (
+  return (<>
+  <Navbar /> 
   <Box p={2} minHeight="95vh" className="bg-black">
     <Typography variant="h4" fontWeight={900}  color="white" mb={3} ml={{ sm: "100px"}}>
       Search Results for <span style={{ color: "#FC1503" }}>{searchTerm}</span> 
@@ -31,7 +33,7 @@ export default function SearchFeed({searchTerm}: Props) {
       {<Videos videos={videos} />}
     </Box>
   </Box>
-  )
+  </>)
 }
 
 export const getServerSideProps = async ({params: {searchTerm}} : {params:{searchTerm: string}}) => {
